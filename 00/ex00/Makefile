@@ -1,25 +1,25 @@
-NAME = PhoneBook
+NAME = megaphone
 
-COMPILE = c++ -Wall -Werror -Wextra
+C = c++ -Wall -Werror -Wextra
 
 STD = -std=c++98
 
-FILE = PhoneBook.cpp
+FILE = megaphone.cpp
 
 OBJS = $(FILE:.cpp=.o)
 
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-	$(COMPILE) $(STD) $(OBJS) -o $(NAME)
+	$(C) $(STD) $(OBJS) -o $(NAME)
 
 %.o : %.cpp
-	$(COMPILE) $(STD) -c $< -o $@
+	$(C) $(STD) -c $< -o $@
 
 clean :
 	rm -rf $(OBJS)
 
-fclean : 
+fclean :
 	make clean
 	rm -rf $(NAME)
 

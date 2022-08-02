@@ -3,18 +3,21 @@
 
 int	main(void)
 {
-	char	cmd[11];
+	std::string	cmd;
 	PhoneBook	phonebook;
 
 	while (1)
 	{
 		std::cout << "Please Input Command : ";
 		std::cin >> cmd;
-		if (!(strncmp(cmd, "ADD", 4)) || !(strncmp(cmd, "add", 4)))
+		if (!(cmd.compare("ADD")) || !(cmd.compare("add")))
 			phonebook.add_contact();
-		else if (!(strncmp(cmd, "SEARCH", 7)) || !(strncmp(cmd, "search", 7)))
+		else if (!(cmd.compare("SEARCH")) || !(cmd.compare("search")))
+		{
+			phonebook.print_contact_short();
 			phonebook.print_contact();
-		else if (!(strncmp(cmd, "EXIT", 5)) || !(strncmp(cmd, "exit", 5)))
+		}
+		else if (!(cmd.compare("EXIT")) || !(cmd.compare("exit")))
 			return (0);
 		else
 			std::cout << "No Command" << std::endl;

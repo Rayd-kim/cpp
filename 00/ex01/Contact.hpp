@@ -12,7 +12,8 @@ class Contact {
 		std::string	phonenumber;
 		std::string	darkestsecret;
 	public:
-		void	print_contact(int index);
+		void	print_contact_short(int index);
+		void	print_contact_all(void);
 		void	add_field(void);
 		void	make_ten_char(std::string str);
 };
@@ -24,7 +25,7 @@ void Contact::make_ten_char(std::string str)
 	len = str.length();
 	if (len < 10)
 	{
-		for (int i = 1; i + len < 10; i++)
+		for (int i = 1; i + len <= 10; i++)
 			std::cout << " ";
 		std::cout << str;
 	}
@@ -34,15 +35,10 @@ void Contact::make_ten_char(std::string str)
 		std::cout << str;
 }
 
-void	Contact::print_contact(int index)
+void	Contact::print_contact_short(int index)
 {
-	if (index > 0 && index < 9)
+	if (firstname.empty() == 0)
 	{
-		if (firstname.empty())
-		{
-			std::cout << "Empty contact num\n";
-			return ;
-		}
 		std::cout << "         " <<index << "|";
 		make_ten_char(firstname);std::cout << "|";
 		make_ten_char(lastname);std::cout << "|";
@@ -50,8 +46,26 @@ void	Contact::print_contact(int index)
 		std::cout << std::endl;
 	}
 	else
-		std::cout << "Wrong Index" << std::endl;
+		std::cout << index << "contact is empty" << std::endl;
 }
+
+void	Contact::print_contact_all(void)
+{
+	
+	if(firstname.empty())
+	{
+		std::cout <<"The contact for that index is empty.." << std::endl;
+		return ;
+	}
+	std::cout << std::endl;
+	std::cout << "Firstname : " << firstname << std::endl;
+	std::cout << "Lastname : " << lastname << std::endl;
+	std::cout << "Nickname : " << nickname << std::endl;
+	std::cout << "PhoneNumber : " << phonenumber << std::endl;
+	std::cout << "DarkedstSecret : " << darkestsecret << std::endl;
+	std::cout << std::endl;
+}
+
 
 void	Contact::add_field(void)
 {
