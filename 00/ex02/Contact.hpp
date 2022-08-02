@@ -2,36 +2,55 @@
 #define CONTACT_HPP
 
 #include <iostream>
+#include <string>
 
 class Contact {
 	private:
-		char	firstname[11];
-		char	lastname[11];
-		char	nickname[11];
-		char	phonenumber[20];
-		char	darkestsecret[11];
+		std::string	firstname;
+		std::string	lastname;
+		std::string	nickname;
+		std::string	phonenumber;
+		std::string	darkestsecret;
 	public:
 		void	print_contact(int index);
-		void	set_field(void);
 		void	add_field(void);
+		void	make_ten_char(std::string str);
 };
 
-void	Contact::set_field(void)
+void Contact::make_ten_char(std::string str)
 {
-	memset (firstname, 0, 11);
-	memset (lastname, 0, 11);
-	memset (nickname, 0, 11);
-	memset (phonenumber, 0, 20);
-	memset (darkestsecret, 0, 11);
+	size_t	len;
+
+	len = str.length();
+	if (len < 10)
+	{
+		for (int i = 1; i + len < 10; i++)
+			std::cout << " ";
+		std::cout << str;
+	}
+	else if (len > 10)
+		std::cout << str.substr(0, 9) << ".";
+	else
+		std::cout << str;
 }
 
 void	Contact::print_contact(int index)
 {
-	std::cout << index << "|";
-	std::cout << firstname << "|";
-	std::cout << lastname << "|";
-	std::cout << nickname << "|" << std::endl;
-
+	if (index > 0 && index < 9)
+	{
+		if (firstname.empty())
+		{
+			std::cout << "Empty contact num\n";
+			return ;
+		}
+		std::cout << "         " <<index << "|";
+		make_ten_char(firstname);std::cout << "|";
+		make_ten_char(lastname);std::cout << "|";
+		make_ten_char(nickname);
+		std::cout << std::endl;
+	}
+	else
+		std::cout << "Wrong Index" << std::endl;
 }
 
 void	Contact::add_field(void)
