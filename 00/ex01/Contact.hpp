@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <iomanip>
 
 class Contact {
 	private:
@@ -23,23 +24,17 @@ void Contact::make_ten_char(std::string str)
 	size_t	len;
 
 	len = str.length();
-	if (len < 10)
-	{
-		for (int i = 1; i + len <= 10; i++)
-			std::cout << " ";
-		std::cout << str;
-	}
-	else if (len > 10)
+	if (len > 10)
 		std::cout << str.substr(0, 9) << ".";
 	else
-		std::cout << str;
+		std::cout << std::setw(10) << str;
 }
 
 void	Contact::print_contact_short(int index)
 {
 	if (firstname.empty() == 0)
 	{
-		std::cout << "         " <<index << "|";
+		std::cout << std::setw(10) << index << "|";
 		make_ten_char(firstname);std::cout << "|";
 		make_ten_char(lastname);std::cout << "|";
 		make_ten_char(nickname);
