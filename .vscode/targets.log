@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Wed Aug  3 17:07:28 2022
+# Make data base, printed on Wed Aug  3 19:37:35 2022
 
 # Variables
 
@@ -26,7 +26,6 @@ VSCODE_LOG_NATIVE = false
 @D = $(patsubst %/,%,$(dir $@))
 # automatic
 @F = $(notdir $@)
- 
 # makefile
 CURDIR := /goinfre/youskim/cpp
 # makefile
@@ -35,16 +34,19 @@ SHELL = /bin/sh
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
 _ = /usr/bin/make
+ 
 # makefile
 MAKEFILE_LIST := 
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cmvh00356w/T/vscode-ipc-a2b61d0a-fc3c-4ee4-a3f4-f75370391898.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cmvh00356w/T/vscode-ipc-ab050e4a-b974-4e4e-a160-6f45e1ac7690.sock
 # environment
 VSCODE_CWD = /
 # environment
 PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
+# environment
+LaunchInstanceID = 7BA1D1A7-24A9-42CF-8AA9-D142866A840A
 # environment
 VSCODE_LOG_STACK = false
 # environment
@@ -52,7 +54,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.D0IBNxSP7o/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.OgK5af7FT5/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -112,19 +114,23 @@ MFLAGS = -Rrqp
 # environment
 MAIL = youskim@student.42seoul.kr
 # environment
-XPC_SERVICE_NAME = com.microsoft.VSCode.1196
+XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000003.Electron
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
 +F = $(notdir $+)
 # environment
 __CF_USER_TEXT_ENCODING = 0x194DC:0x0:0x0
+# environment
+COMMAND_MODE = unix2003
 # default
 MAKEFILES := 
 # automatic
 <F = $(notdir $<)
 # environment
 LC_ALL = C
+# environment
+SECURITYSESSIONID = 186a6
 # automatic
 ^F = $(notdir $^)
 # default
@@ -136,15 +142,15 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 23016
+VSCODE_PID = 2558
 # variable set hash-table stats:
-# Load=61/1024=6%, Rehash=0, Collisions=1/82=1%
+ 
+# Load=64/1024=6%, Rehash=0, Collisions=1/85=1%
 
 # Pattern-specific Variable Values
 
 # No pattern-specific variable values.
 
- 
 # Directories
 
 # . (device 16777220, inode 1152921500312871856): 6 files, no impossibilities.
@@ -221,6 +227,6 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Wed Aug  3 17:07:28 2022
+# Finished Make data base on Wed Aug  3 19:37:35 2022
 
  
