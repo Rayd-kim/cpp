@@ -10,10 +10,11 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Tue Aug  2 14:12:25 2022
+# Make data base, printed on Wed Aug  3 16:08:43 2022
 
 # Variables
 
+ 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
@@ -32,7 +33,6 @@ CURDIR := /goinfre/youskim/cpp
 SHELL = /bin/sh
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
- 
 # environment
 _ = /usr/bin/make
 # makefile
@@ -40,7 +40,7 @@ MAKEFILE_LIST :=
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cmvh00356w/T/vscode-ipc-00496420-3a92-46d8-81d1-3c96b3309b4b.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cmvh00356w/T/vscode-ipc-a2b61d0a-fc3c-4ee4-a3f4-f75370391898.sock
 # environment
 VSCODE_CWD = /
 # environment
@@ -52,7 +52,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.q0nMAha4cf/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.D0IBNxSP7o/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -72,7 +72,7 @@ VSCODE_CODE_CACHE_PATH = /Users/youskim/Library/Application Support/Code/CachedD
 # environment
 LOGNAME = youskim
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
@@ -110,7 +110,9 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = com.microsoft.VSCode.2136
+MAIL = youskim@student.42seoul.kr
+# environment
+XPC_SERVICE_NAME = com.microsoft.VSCode.1196
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
@@ -132,11 +134,12 @@ SUFFIXES :=
 # environment
 MAKELEVEL := 0
 # environment
+ 
 LANG = C
 # environment
-VSCODE_PID = 23967
+VSCODE_PID = 23016
 # variable set hash-table stats:
-# Load=60/1024=6%, Rehash=0, Collisions=1/81=1%
+# Load=61/1024=6%, Rehash=0, Collisions=1/82=1%
 
 # Pattern-specific Variable Values
 
@@ -144,9 +147,9 @@ VSCODE_PID = 23967
 
 # Directories
 
-# . (device 16777220, inode 1152921500313687343): 5 files, no impossibilities.
+# . (device 16777220, inode 1152921500312871592): 6 files, no impossibilities.
 
-# 5 files, no impossibilities in 1 directories.
+# 6 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -155,7 +158,6 @@ VSCODE_PID = 23967
 # Files
 
 # Not a target:
- 
 all:
 #  Command-line target.
 #  Implicit rule search has been done.
@@ -219,6 +221,6 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Tue Aug  2 14:12:25 2022
+# Finished Make data base on Wed Aug  3 16:08:43 2022
 
  
