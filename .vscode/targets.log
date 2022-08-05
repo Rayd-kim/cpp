@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Fri Aug  5 18:18:44 2022
+# Make data base, printed on Fri Aug  5 19:09:22 2022
 
 # Variables
 
@@ -40,11 +40,11 @@ MAKEFILE_LIST :=
 VSCODE_VERBOSE_LOGGING = true
 # environment
 VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cmvh00356w/T/vscode-ipc-02b825b7-0553-4f25-8bd8-66c1c8350b98.sock
+ 
 # environment
 VSCODE_CWD = /
 # environment
 PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
- 
 # environment
 VSCODE_LOG_STACK = false
 # environment
@@ -150,6 +150,7 @@ VSCODE_PID = 98818
 
 # 8 files, no impossibilities in 1 directories.
 
+ 
 # Implicit Rules
 
 # No implicit rules.
@@ -177,7 +178,6 @@ Makefile:
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has been updated.
- 
 #  Failed to be updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
@@ -221,6 +221,6 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Fri Aug  5 18:18:44 2022
+# Finished Make data base on Fri Aug  5 19:09:22 2022
 
  
