@@ -11,43 +11,13 @@ class Harl
 		void	info(void);
 		void	warning(void);
 		void	error(void);
+		static std::string lev[4];
+		void	(Harl::*ptr[4])();
+
 	public:
 		Harl();
 		~Harl();
 		void	complain(std::string level);
 };
-
-Harl::Harl()
-{
-}
-
-Harl::~Harl()
-{
-}
-
-void	Harl::debug(void)
-{
-	std::cout << "Do debug" << std::endl;
-}
-
-void	Harl::info(void)
-{
-	std::cout << "Do info" << std::endl;
-}
-
-void	Harl::warning(void)
-{
-	std::cout << "Do warning" << std::endl;
-}
-
-void	Harl::error(void)
-{
-	std::cout << "Do error" << std::endl;
-}
-
-void	Harl::complain(std::string level)
-{
-	
-}
 
 #endif
