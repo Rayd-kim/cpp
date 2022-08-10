@@ -47,7 +47,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	}
 }
 
-unsigned int	ClapTrap::my_attack_damege(void)
+unsigned int	ClapTrap::my_attack_damage(void)
 {
 	return (attack_damage);
 }
