@@ -10,15 +10,16 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Sun Aug  7 20:14:58 2022
+# Make data base, printed on Wed Aug 10 15:20:31 2022
 
 # Variables
 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
- 
 # automatic
 ?F = $(notdir $?)
+# environment
+VSCODE_LOG_NATIVE = false
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -26,49 +27,52 @@ make: *** No rule to make target `all'.  Stop.
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /Users/kimyousung/42cursus/cpp
+CURDIR := /goinfre/youskim/cpp
 # makefile
 SHELL = /bin/sh
 # environment
-VSCODE_NLS_CONFIG = {"locale":"ko","availableLanguages":{"*":"ko"},"_languagePackId":"2dff5cff996ed6cbe8d8aa8740f86aa0.ko","_translationsConfigFile":"/Users/kimyousung/Library/Application Support/Code/clp/2dff5cff996ed6cbe8d8aa8740f86aa0.ko/tcf.json","_cacheRoot":"/Users/kimyousung/Library/Application Support/Code/clp/2dff5cff996ed6cbe8d8aa8740f86aa0.ko","_resolvedLanguagePackCoreLocation":"/Users/kimyousung/Library/Application Support/Code/clp/2dff5cff996ed6cbe8d8aa8740f86aa0.ko/3b889b090b5ad5793f524b5d1d39fda662b96a2a","_corruptedFile":"/Users/kimyousung/Library/Application Support/Code/clp/2dff5cff996ed6cbe8d8aa8740f86aa0.ko/corrupted.info","_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
 _ = /usr/bin/make
 # makefile
 MAKEFILE_LIST := 
 # environment
-__CFBundleIdentifier = com.microsoft.VSCode
+VSCODE_VERBOSE_LOGGING = true
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cmvh00356w/T/vscode-ipc-f47b07dd-7934-4d03-b097-14733dc4fb17.sock
 # environment
 VSCODE_CWD = /
 # environment
-PATH = /opt/homebrew/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/opt/mysql@5.6/bin:/usr/local/opt/mysql@5.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
 # environment
-LSCOLORS = Gxfxcxdxbxegedabagacad
+VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
+ 
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.0XWar5YplY/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.D0ELLqKhqC/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
-PWD = /Users/kimyousung/42cursus/cpp
+VSCODE_PIPE_LOGGING = true
+# environment
+PWD = /goinfre/youskim/cpp
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
-HOME = /Users/kimyousung
+HOME = /Users/youskim
 # default
-MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
+MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/kimyousung/Library/Application Support/Code/CachedData/3b889b090b5ad5793f524b5d1d39fda662b96a2a
+VSCODE_CODE_CACHE_PATH = /Users/youskim/Library/Application Support/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
 # environment
-LOGNAME = kimyousung
+LOGNAME = youskim
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
-# environment
-ZSH = /Users/kimyousung/.oh-my-zsh
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
@@ -87,22 +91,18 @@ MAKE_VERSION := 3.81
 USER = youskim
 # makefile
 .DEFAULT_GOAL := 
-# environment
-LESS = -R
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # default
-MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
+MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
 # default
 .VARIABLES := 
 # environment
-TMPDIR = /var/folders/1j/9_dkqm7x3dd46kfwr6_d896m0000gn/T/
+TMPDIR = /var/folders/zz/zyxvpxvq6csfxvn_n000cmvh00356w/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/kimyousung/Library/Application Support/Code/1.69.2-main.sock
-# environment
-MallocNanoZone = 0
+VSCODE_IPC_HOOK = /Users/youskim/Library/Application Support/Code/1.67.2-main.sock
 # makefile
 MAKEFLAGS = Rrqp
 # environment
@@ -112,28 +112,23 @@ MFLAGS = -Rrqp
 # environment
 MAIL = youskim@student.42seoul.kr
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.5831587.5831593
+XPC_SERVICE_NAME = com.microsoft.VSCode.2220
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
 +F = $(notdir $+)
 # environment
-__CF_USER_TEXT_ENCODING = 0x1F5:0x3:0x33
-# environment
-COMMAND_MODE = unix2003
+__CF_USER_TEXT_ENCODING = 0x194DC:0x0:0x0
 # default
 MAKEFILES := 
 # automatic
 <F = $(notdir $<)
-# environment
-PAGER = less
 # environment
 LC_ALL = C
 # automatic
 ^F = $(notdir $^)
 # default
 SUFFIXES := 
- 
 # default
 .INCLUDE_DIRS = /usr/local/include
 # environment
@@ -141,9 +136,9 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 31979
+VSCODE_PID = 28112
 # variable set hash-table stats:
-# Load=63/1024=6%, Rehash=0, Collisions=1/84=1%
+# Load=61/1024=6%, Rehash=0, Collisions=1/82=1%
 
 # Pattern-specific Variable Values
 
@@ -151,9 +146,9 @@ VSCODE_PID = 31979
 
 # Directories
 
-# . (device 16777229, inode 5825897): 8 files, no impossibilities.
+# . (device 16777220, inode 1152921500313122702): 9 files, no impossibilities.
 
-# 8 files, no impossibilities in 1 directories.
+# 9 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -171,6 +166,7 @@ all:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
+ 
 .SUFFIXES:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -225,6 +221,6 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Sun Aug  7 20:14:58 2022
+# Finished Make data base on Wed Aug 10 15:20:31 2022
 
  
