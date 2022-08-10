@@ -1,8 +1,20 @@
 #include <iostream>
 
-int main(void)
-{
-	float a = 42.42;
+class A {
+ public:
+  virtual void show() { std::cout << "Parent !" << std::endl; }
+};
+class B : public A {
+ public:
+  void show() { std::cout << "Child!" << std::endl; }
+};
 
-	std::cout << a << std::endl;
+void test(A& a) { a.show(); }
+int main() {
+  A a;
+  B b;
+  test(a);
+  test(b);
+
+  return 0;
 }

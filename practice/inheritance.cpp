@@ -9,7 +9,7 @@ class Parent
     Parent(std::string name): name(name) {
       std::cout << name << " Parent Constructor" << std::endl;
     }
-    ~Parent(){std::cout << name << " Parent Destructor" << std::endl;}
+    virtual ~Parent(){std::cout << name << " Parent Destructor" << std::endl;}
     virtual void  print(void){
       std::cout << "Parent " << name << std::endl;
     }
@@ -32,12 +32,14 @@ class Child : public Parent
 int main(void)
 {
   Parent  a("A");
-  Child   b("B");
+  Child   *b = new Child("B");
   Parent  *c;
 
-  c = &b;
+  c = b;
 
   a.print();
-  b.print();
+  b->print();
   c->print();
+
+  delete c;
 }
