@@ -1,18 +1,19 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int	main(void)
 {
-	ScavTrap	a("A");
-	ScavTrap	b("B");
+	FragTrap	a("A");
+	FragTrap	b("B");
 
-	a.ClapTrap::attack(b.my_name());
+	a.attack(b.my_name());
 	b.takeDamage(a.my_attack_damage());
 
 	b.attack(a.my_name());
 	a.takeDamage(b.my_attack_damage());
 	
-	a.guardGate();
-	b.guardGate();
+	a.highFivesGuys();
+	b.highFivesGuys();
 	return (0);
 }

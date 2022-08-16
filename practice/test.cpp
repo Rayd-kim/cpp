@@ -1,20 +1,47 @@
 #include <iostream>
+using namespace std;
 
-class A {
- public:
-  virtual void show() { std::cout << "Parent !" << std::endl; }
+class IErrorLog
+{
+public:
+    virtual bool reportError(const char * error) = 0;
+    virtual ~IErrorLog() {}
 };
-class B : public A {
- public:
-  void show() { std::cout << "Child!" << std::endl; }
+
+
+class FileErrorLog : public IErrorLog
+{
+public:
+    bool reportError(const char * errorMessage) override
+    {
+        cout << "Writing error to a file" << endl;
+        return true;
+    }
 };
 
-void test(A& a) { a.show(); }
-int main() {
-  A a;
-  B b;
-  test(a);
-  test(b);
 
-  return 0;
+class ConsoleErrorLog : public IErrorLog
+{
+public:
+    bool reportError(const char * errorMessage) override
+    {
+        cout << "Printing error to a console" << endl;
+        return true;
+    }
+};
+
+
+void doSomething(IErrorLog & log)
+{
+    log.reportError("Runtime error!!");
+}
+
+
+int main()
+{
+    FileErrorLog file_log;
+    ConsoleErrorLog console_log;
+
+    doSomething(file_log);   // ⭐다형성
+    doSomething(console_log); // ⭐다형성
 }
