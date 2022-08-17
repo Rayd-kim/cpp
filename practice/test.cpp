@@ -1,47 +1,68 @@
 #include <iostream>
+
 using namespace std;
 
-class IErrorLog
+class Exception
 {
 public:
-    virtual bool reportError(const char * error) = 0;
-    virtual ~IErrorLog() {}
-};
-
-
-class FileErrorLog : public IErrorLog
-{
-public:
-    bool reportError(const char * errorMessage) override
+    void report()
     {
-        cout << "Writing error to a file" << endl;
-        return true;
+        cerr << "Exception report" << endl;
     }
 };
 
-
-class ConsoleErrorLog : public IErrorLog
+class ArrayException : public Exception
 {
 public:
-    bool reportError(const char * errorMessage) override
+    void report()  // 오버라이딩
     {
-        cout << "Printing error to a console" << endl;
-        return true;
+        cerr << "Array Exception report" << endl;
     }
 };
 
-
-void doSomething(IErrorLog & log)
+class MyArray
 {
-    log.reportError("Runtime error!!");
+private:
+    int m_data[5];
+public:
+    int & operator [] (const int & index)
+    {
+        if (index < 0 || index >= 5) throw 1;
+        return m_data[index];
+    }
+};
+
+void doSomething()
+{
+    MyArray my_array;
+    
+    try
+    {
+        my_array[100];
+    }
+    catch (ArrayException & e)
+    {
+        cout << "doSomething()" << endl;
+        e.report();
+        throw e;  // 👈 re-throw
+    }
+    catch (Exception & e)
+    {
+        cout << "doSomething()" << endl;
+        e.report();
+    }
 }
-
 
 int main()
 {
-    FileErrorLog file_log;
-    ConsoleErrorLog console_log;
-
-    doSomething(file_log);   // ⭐다형성
-    doSomething(console_log); // ⭐다형성
+   try
+   {
+       doSomething();
+   }
+   catch (ArrayException & e)
+   {
+       cout << "main()" << endl;
+    //    e.report();
+   }
+   return 0;
 }
