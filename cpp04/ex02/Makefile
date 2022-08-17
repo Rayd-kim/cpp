@@ -1,4 +1,4 @@
-NAME = ex01
+NAME = ex02
 
 COMPILE = c++ -Wall -Werror -Wextra -Wall
 

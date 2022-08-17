@@ -8,6 +8,7 @@ int	main(void)
 	const Animal*	animal[n] = {new Dog(), new Dog(), new Cat(), new Cat()};
 	
 	std::cout << std::endl;
+	
 	const Cat a;
 	const Cat d(a);
 

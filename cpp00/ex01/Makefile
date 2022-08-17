@@ -4,7 +4,9 @@ COMPILE = c++ -Wall -Werror -Wextra
 
 STD = -std=c++98
 
-FILE = PhoneBook.cpp
+FILE = PhoneBook.cpp \
+		Contact.cpp \
+		main.cpp
 
 OBJS = $(FILE:.cpp=.o)
 
