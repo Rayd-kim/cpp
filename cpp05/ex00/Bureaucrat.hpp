@@ -12,19 +12,27 @@ class	Bureaucrat
 
 	public:
 		Bureaucrat();
+		Bureaucrat(const std::string name, int grade);
+		Bureaucrat(const Bureaucrat &b);
 		~Bureaucrat();
-		const std::string	getName(void);
-		int	getGrade(void);
+		const std::string	getName(void) const;
+		int	getGrade(void) const;
+
+		class	GradeTooHighException : public std::exception
+		{
+			public:
+				const char* what() const throw();
+		};
+
+		class	GradeTooLowException : public std::exception
+		{
+			public:
+				const char* what() const throw();
+		};
+
+		Bureaucrat& operator=(const Bureaucrat &b);
 };
 
-const std::string	Bureaucrat::getName(void)
-{
-	return (name);
-}
-
-int	Bureaucrat::getGrade(void)
-{
-	return (grade);
-}
+std::ostream& operator<<(std::ostream& out, const Bureaucrat &b);
 
 #endif
