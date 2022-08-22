@@ -1,5 +1,18 @@
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap()
+{
+	name = "default_construct";
+	hit_point = 10;
+	energy_point = 10;
+	attack_damage = 0;
+}
+
+ClapTrap::ClapTrap(const ClapTrap &c)
+{
+	(*this) = c;
+}
+
 ClapTrap::ClapTrap(std::string name): name(name)
 {
 	hit_point = 10;
@@ -11,6 +24,15 @@ ClapTrap::ClapTrap(std::string name): name(name)
 ClapTrap::~ClapTrap()
 {
 	std::cout << name << " is Destructed..!" << std::endl;
+}
+
+ClapTrap& ClapTrap::operator=(const ClapTrap &c)
+{
+	name = c.name;
+	hit_point = c.hit_point;
+	energy_point = c.energy_point;
+	attack_damage = c.attack_damage;
+	return (*this);
 }
 
 void	ClapTrap::attack(const std::string& target)
