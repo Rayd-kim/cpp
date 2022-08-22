@@ -1,4 +1,4 @@
-NAME = Zombie
+NAME = ex00
 
 COMPILE = c++ -Wall -Werror -Wextra 
 

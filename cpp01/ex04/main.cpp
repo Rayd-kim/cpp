@@ -10,7 +10,7 @@ int	main(int argc, char *argv[])
 		return (0);
 	}
 
-	std::string	filename = argv[1];
+	const std::string	filename = argv[1];
 	const std::string	s1 = argv[2];
 	const std::string	s2 = argv[3];
 	std::string	txt;

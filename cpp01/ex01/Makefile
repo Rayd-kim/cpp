@@ -1,4 +1,4 @@
-NAME = ZombieHorde
+NAME = ex01
 
 COMPILE = c++ -Wall -Werror -Wextra 
 

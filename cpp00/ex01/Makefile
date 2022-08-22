@@ -1,4 +1,4 @@
-NAME = PhoneBook
+NAME = phonebook
 
 COMPILE = c++ -Wall -Werror -Wextra
 

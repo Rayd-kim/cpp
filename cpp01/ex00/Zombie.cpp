@@ -1,13 +1,17 @@
 #include "Zombie.hpp"
 
-void	Zombie::announce(void)
+Zombie::Zombie()
 {
-	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	name = "Noname";
 }
 
-void	Zombie::enter_name(std::string zomebie_name)
+Zombie::Zombie(std::string name) : name(name)
 {
-	name = zomebie_name;
+}
+
+void	Zombie::announce(void)
+{
+	std::cout << name << " : BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
 Zombie::~Zombie(void)

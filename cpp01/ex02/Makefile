@@ -1,4 +1,4 @@
-NAME = Brain
+NAME = ex02
 
 COMPILE = c++ -Wall -Werror -Wextra 
 
