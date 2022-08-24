@@ -72,6 +72,16 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat &b)
 	return (*this);
 }
 
+void	Bureaucrat::signForm(Form &f)
+{
+	f.beSigned(*this);
+	if (f.getSign())
+		std::cout << "Bureaucrat " << name << " signed " << f.getName() << " Form" << std::endl;
+	else
+		std::cout << "Bureaucrat " << name << " couldn't sign " << f.getName() \
+		<< " Form because grade too low" <<std::endl;
+}
+
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& b)
 {
 	out << b.getName();

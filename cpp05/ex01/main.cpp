@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int	main(void)
 {
@@ -15,14 +16,13 @@ int	main(void)
 		// std::cout << "name : " << b.getName() << std::endl;
 		// std::cout << "grade : " << b.getGrade() << std::endl;
 
-		b.grade_up();
-		std::cout << b << std::endl;
-		b.grade_up();
-		std::cout << b << std::endl;
+		Form	form1("first", 1, 1);
+		Form	form2("second", 3, 3);
 
-		a.grade_up();
-		std::cout << a << std::endl;
-
+		// a.signForm(form1);
+		// a.signForm(form2);
+		b.signForm(form1);
+		b.signForm(form2);
 	}
 	catch(const std::exception& e)
 	{
