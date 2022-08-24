@@ -12,7 +12,9 @@ class	Brain
 	public:
 		Brain();
 		~Brain();
-		void	copy_ideas(Brain &brain);
+		Brain(const Brain &b);
+		Brain& operator=(const Brain &b);
+		void	copy_ideas(const Brain &brain);
 };
 
 # endif

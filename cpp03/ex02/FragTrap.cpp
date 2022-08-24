@@ -1,13 +1,29 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(std::string name) :  ClapTrap(name, 100, 100, 30)
+FragTrap::FragTrap() : ClapTrap()
 {
-	std::cout << my_name() << " FragTrap is constructed" << std::endl;
+
+}
+
+FragTrap::FragTrap(const FragTrap &f)
+{
+	(*this) = f;
+}
+
+FragTrap& FragTrap::operator=(const FragTrap &f)
+{
+	ClapTrap::operator=(f);
+	return (*this);
 }
 
 FragTrap::~FragTrap(void)
 {
 	std::cout << my_name() << " FragTrap is destroyed" << std::endl;
+}
+
+FragTrap::FragTrap(std::string name) :  ClapTrap(name, 100, 100, 30)
+{
+	std::cout << my_name() << " FragTrap is constructed" << std::endl;
 }
 
 void	FragTrap::highFivesGuys(void)

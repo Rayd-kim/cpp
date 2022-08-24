@@ -21,6 +21,13 @@ Cat::~Cat()
 	std::cout << "Cat class is destructed" << std::endl;
 }
 
+Cat& Cat::operator=(const Cat &c)
+{
+	type = c.type;
+	brain->copy_ideas(*c.brain);
+	return (*this);
+}
+
 void	Cat::makeSound(void) const
 {
 	std::cout << "Meow Meow" << std::endl;

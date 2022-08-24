@@ -21,6 +21,13 @@ Dog::~Dog()
 	std::cout << "Dog class is destructed" << std::endl;
 }
 
+Dog& Dog::operator=(const Dog &d)
+{
+	type = d.type;
+	brain->copy_ideas(*d.brain);
+	return (*this);
+}
+
 void	Dog::makeSound(void) const
 {
 	std::cout << "Woof Woof" << std::endl;

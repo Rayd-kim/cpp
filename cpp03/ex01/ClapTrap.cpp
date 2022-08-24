@@ -13,7 +13,6 @@ ClapTrap::ClapTrap(const ClapTrap &c)
 	(*this) = c;
 }
 
-
 ClapTrap::ClapTrap(std::string name): name(name)
 {
 	hit_point = 10;
