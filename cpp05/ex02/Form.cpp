@@ -10,7 +10,7 @@ Form::Form(std::string name, int sign, int execute) :
 name(name), grade_sign(sign), grade_execute(execute)
 {
 	sign = false;
-	std::cout << name << " Constructor" << std::endl;
+	std::cout << name << " Form Constructor" << std::endl;
 	if (grade_sign < 1 || grade_execute < 1)
 		throw(Form::GradeTooHighException());
 	if (grade_sign > 150 || grade_execute > 150)
