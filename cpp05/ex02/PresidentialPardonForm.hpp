@@ -2,39 +2,22 @@
 #define PRESIDENTIALPARDONFORM_HPP
 
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
-class	Form;
+class Bureaucrat;
 
 class	PresidentialPardonForm : public	Form 
 {
-	public:
+	private:
 		PresidentialPardonForm();
-		PresidentialPardonForm(std::string name);
 		PresidentialPardonForm(const PresidentialPardonForm& P);
+		PresidentialPardonForm& operator=(const PresidentialPardonForm &P);
+	public:
+		PresidentialPardonForm(std::string name);
 		~PresidentialPardonForm();
 
 		bool	execute(Bureaucrat const &executor) const;
 };
 
-PresidentialPardonForm::PresidentialPardonForm(std::string name) : Form(name, 25, 5)
-{
-	std::cout << name << " PresidentialPardonForm Constructor" << std::endl;
-}
-
-bool	PresidentialPardonForm::execute(Bureaucrat const &executor) const
-{
-	if (getSign())
-	{
-		if (executor.getGrade() <= getExecuteGrade())
-			return (true);
-		else
-			throw(Bureaucrat::GradeTooLowException());
-	}
-	else
-	{
-		std::cout << getName() << " PresidentialPardonForm is not signed" << std::endl;
-		return (false);
-	}
-}
 
 #endif

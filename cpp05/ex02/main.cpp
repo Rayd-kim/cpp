@@ -1,23 +1,27 @@
-#include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
 int	main(void)
 {
 	try
 	{
-		Bureaucrat	a("A", 1);
-		Bureaucrat	b("B", 3);
+		Bureaucrat	a("A", 130);
+		Bureaucrat	b("B", 130);
 
 		std::cout << a << std::endl;
 		std::cout << b << std::endl;
 
-		Form	form1("first", 1, 1);
-		Form	form2("second", 3, 3);
+		ShrubberyCreationForm	form1("first");
+		ShrubberyCreationForm	form2("second");
 
-		// a.signForm(form1);
-		// a.signForm(form2);
+		a.signForm(form1);
+		a.signForm(form2);
 		b.signForm(form1);
 		b.signForm(form2);
+
+		a.executeForm(form1);
+		b.executeForm(form2);
 	}
 	catch(const std::exception& e)
 	{
