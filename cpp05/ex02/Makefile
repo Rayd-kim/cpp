@@ -7,7 +7,9 @@ STD = -std=c++98
 FILE = main.cpp \
 		Bureaucrat.cpp \
 		Form.cpp \
-		ShrubberyCreationForm.cpp
+		ShrubberyCreationForm.cpp \
+		RobotomyRequestForm.cpp \
+		PresidentialPardonForm.cpp
 
 OBJS = $(FILE:.cpp=.o)
 

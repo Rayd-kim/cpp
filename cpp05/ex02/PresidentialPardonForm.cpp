@@ -7,7 +7,7 @@ PresidentialPardonForm::PresidentialPardonForm(std::string name) : Form(name, 25
 
 PresidentialPardonForm::~PresidentialPardonForm()
 {
-	std::cout << getName << " PresidentialPardonForm Destructor" << std::endl;
+	std::cout << getName() << " PresidentialPardonForm Destructor" << std::endl;
 }
 
 bool	PresidentialPardonForm::execute(Bureaucrat const &executor) const
@@ -16,7 +16,7 @@ bool	PresidentialPardonForm::execute(Bureaucrat const &executor) const
 	{
 		if (executor.getGrade() <= getExecuteGrade())
 		{
-			std::cout << getName << " has been pardoned by Zaphod Beeblebrox" << std::endl;
+			std::cout << getName() << " has been pardoned by Zaphod Beeblebrox" << std::endl;
 			return (true);
 		}
 		else

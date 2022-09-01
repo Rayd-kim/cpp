@@ -1,7 +1,9 @@
-#ifndef ROBOTOMYREQUESTFORM.hpp
-#define ROBOTOMYREQUESTFORM.hpp
+#ifndef ROBOTOMYREQUESTFORM_hpp
+#define ROBOTOMYREQUESTFORM_hpp
 
 #include "Form.hpp"
+#include <cstdlib>
+#include <ctime>
 
 class	Form;
 
@@ -14,27 +16,7 @@ class RobotomyRequestForm : public Form
 		~RobotomyRequestForm();
 
 		bool	execute(Bureaucrat const &executor) const;
+		void	randRobot(void) const;
 };
-
-RobotomyRequestForm::RobotomyRequestForm(std::string name) : Form(name, 72, 45)
-{
-	std::cout << name << " RobotomyRequestForm Constructor" << std::endl;
-}
-
-bool	RobotomyRequestForm::execute(Bureaucrat const &executor) const
-{
-	if (getSign())
-	{
-		if (executor.getGrade() <= getExecuteGrade())
-			return (true);
-		else
-			throw(Bureaucrat::GradeTooLowException());
-	}
-	else
-	{
-		std::cout << getName() << " RobotomyRequestForm is not signed" << std::endl;
-		return (false);
-	}
-}
 
 #endif
