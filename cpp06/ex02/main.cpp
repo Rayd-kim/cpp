@@ -42,7 +42,7 @@ void	identify(Base* p)
 	try
 	{
 		A *a = dynamic_cast<A*>(p);
-		if (a == nullptr)
+		if (a == 0)
 			throw(1);
 		std::cout << "P is A" << std::endl;
 	}
@@ -51,7 +51,7 @@ void	identify(Base* p)
 		try
 		{
 			B *b = dynamic_cast<B*>(p);
-			if (b == nullptr)
+			if (b == 0)
 				throw(1);
 			std::cout << "P is B" << std::endl;
 		}
