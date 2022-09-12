@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: youskim <youskim@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/12 14:30:28 by youskim           #+#    #+#             */
+/*   Updated: 2022/09/12 16:13:36 by youskim          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Weapon.hpp"
 #include "HumanA.hpp"
 #include "HumanB.hpp"
@@ -21,5 +33,5 @@ int main(void)
 		club.setType("some other type of club");
 		jim.attack();
 	}
-return 0;
+	return 0;
 }

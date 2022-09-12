@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: youskim <youskim@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/12 13:50:51 by youskim           #+#    #+#             */
+/*   Updated: 2022/09/12 14:20:02 by youskim          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Contact.hpp"
 
 void Contact::make_ten_char(std::string str)
@@ -16,8 +28,10 @@ void	Contact::print_contact_short(int index)
 	if (firstname.empty() == 0)
 	{
 		std::cout << std::setw(10) << index << "|";
-		make_ten_char(firstname);std::cout << "|";
-		make_ten_char(lastname);std::cout << "|";
+		make_ten_char(firstname);
+		std::cout << "|";
+		make_ten_char(lastname);
+		std::cout << "|";
 		make_ten_char(nickname);
 		std::cout << std::endl;
 	}
@@ -45,10 +59,10 @@ void	Contact::print_contact_all(void)
 
 void	Contact::add_field(void)
 {
-	std::cout << "Fistname :"; std::cin >> firstname;
-	std::cout << "Lastname :"; std::cin >> lastname;
-	std::cout << "Nickname :"; std::cin >> nickname;
-	std::cout << "PhoneNumber :"; std::cin >> phonenumber;
-	std::cout << "DarkestSecret :"; std::cin >> darkestsecret;
+	std::cout << "Fistname :"; getline(std::cin, firstname);
+	std::cout << "Lastname :"; getline(std::cin, lastname);
+	std::cout << "Nickname :"; getline(std::cin, nickname);
+	std::cout << "PhoneNumber :"; getline(std::cin, phonenumber);
+	std::cout << "DarkestSecret :"; getline(std::cin, darkestsecret);
 	std::cout << "ADD SUCCESS!!" << std::endl;
 }

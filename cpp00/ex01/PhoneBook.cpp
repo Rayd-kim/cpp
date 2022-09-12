@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: youskim <youskim@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/12 13:51:07 by youskim           #+#    #+#             */
+/*   Updated: 2022/09/12 14:22:17 by youskim          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "PhonBook.hpp"
 
 void	PhoneBook::add_contact(void)
@@ -36,6 +48,7 @@ void	PhoneBook::print_contact(void)
 		print_contact();
 		return ;
 	}
+	std::cin.ignore(1000, '\n');
 	if (index > 0 && index < 9)
 		contact[index - 1].print_contact_all();
 	else
