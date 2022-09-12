@@ -6,7 +6,7 @@
 /*   By: youskim <youskim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 14:30:49 by youskim           #+#    #+#             */
-/*   Updated: 2022/09/12 17:44:45 by youskim          ###   ########.fr       */
+/*   Updated: 2022/09/12 18:34:54 by youskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,16 +39,17 @@ int	main(int argc, char *argv[])
 			return (0);
 		}
 		int	i;
-		while (in)
+		int	len;
+		while (getline(in, txt))
 		{
-			getline(in, txt);
-			i = txt.find(s1);
+			len = 0;
+			i = txt.find(s1, len);
 			while (i != -1)
 			{
 				txt.erase(i, s1.length());
 				txt.insert(i, s2);
-				i = txt.find(s1);
-				std::cout << i << std::endl;
+				len = s2.length() + i;
+				i = txt.find(s1, len);
 			}
 			out << txt;
 			out << "\n";
