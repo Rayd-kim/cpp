@@ -6,7 +6,7 @@
 /*   By: youskim <youskim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 14:30:59 by youskim           #+#    #+#             */
-/*   Updated: 2022/09/12 14:30:59 by youskim          ###   ########.fr       */
+/*   Updated: 2022/09/12 17:04:13 by youskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,9 @@ void	Harl::complain(std::string level)
 		if (!(level.compare(lev[i])))
 		{
 			(this->*ptr[i])();
+			// (*this.*ptr[i])();
+			return ;
 		}
 	}
+	std::cout << "Please, input right complain" << std::endl;
 }

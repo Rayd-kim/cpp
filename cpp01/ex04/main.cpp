@@ -6,7 +6,7 @@
 /*   By: youskim <youskim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 14:30:49 by youskim           #+#    #+#             */
-/*   Updated: 2022/09/12 14:30:49 by youskim          ###   ########.fr       */
+/*   Updated: 2022/09/12 17:44:45 by youskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,15 @@ int	main(int argc, char *argv[])
 
 	std::ifstream in(filename);
 	
-	if (!(in.is_open()))
-	{
-		std::cout << "Not exit file" << std::endl;
-		return (0);
-	}
-	else
+	if (in.is_open())
 	{
 		std::ofstream out(filename + ".replace");
 		if (!(out.is_open()))
+		{
 			std::cout << "replace file opne fail.." << std::endl;
+			in.close();
+			return (0);
+		}
 		int	i;
 		while (in)
 		{
@@ -49,9 +48,17 @@ int	main(int argc, char *argv[])
 				txt.erase(i, s1.length());
 				txt.insert(i, s2);
 				i = txt.find(s1);
+				std::cout << i << std::endl;
 			}
 			out << txt;
 			out << "\n";
 		}
+		in.close();
 	}
+	else
+	{
+		std::cout << "Not exit file" << std::endl;
+		return (0);
+	}
+	return (0);
 }

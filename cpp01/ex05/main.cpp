@@ -6,7 +6,7 @@
 /*   By: youskim <youskim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 14:31:03 by youskim           #+#    #+#             */
-/*   Updated: 2022/09/12 14:31:04 by youskim          ###   ########.fr       */
+/*   Updated: 2022/09/12 17:04:09 by youskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	main(void)
 {
 	Harl	harl;
-
+	
 	harl.complain("DEBUG");
 	harl.complain("DEBUG");
 	harl.complain("INFO");

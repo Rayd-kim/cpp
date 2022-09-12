@@ -6,7 +6,7 @@
 /*   By: youskim <youskim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 14:30:04 by youskim           #+#    #+#             */
-/*   Updated: 2022/09/12 14:30:04 by youskim          ###   ########.fr       */
+/*   Updated: 2022/09/12 17:39:03 by youskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,6 @@ int	main(void)
 	std::cout << str << std::endl;
 	std::cout << *stringPTR << std::endl;
 	std::cout << stringREF << std::endl;
+
+	return (0);
 }
