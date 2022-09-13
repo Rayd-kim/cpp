@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: youskim <youskim@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/13 19:04:17 by youskim           #+#    #+#             */
+/*   Updated: 2022/09/13 19:22:04 by youskim          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
@@ -51,18 +63,24 @@ int	Bureaucrat::getGrade(void) const
 
 void	Bureaucrat::grade_up(void)
 {
-	std::cout << "Increase grade!" << std::endl;
-	grade--;
-	if (grade < 1)
-		throw(Bureaucrat::GradeTooHighException());
+	if (grade == 1)
+		std::cout << "Already high grade, so can't grade up!" << std::endl;
+	else
+	{
+		std::cout << "Increase grade!" << std::endl;
+		grade--;
+	}
 }
 
 void	Bureaucrat::grade_down(void)
 {
-	std::cout << "Decrease grade!" << std::endl;
-	grade++;
-	if (grade > 150)
-		throw(Bureaucrat::GradeTooLowException());
+	if (grade == 150)
+		std::cout << "Already low grade, so can't grade down!" << std::endl;
+	else
+	{
+		std::cout << "Decrease grade!" << std::endl;
+		grade++;
+	}
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat &b)
