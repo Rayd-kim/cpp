@@ -6,7 +6,7 @@
 /*   By: youskim <youskim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 16:23:44 by youskim           #+#    #+#             */
-/*   Updated: 2022/09/13 16:23:45 by youskim          ###   ########.fr       */
+/*   Updated: 2022/09/13 17:28:42 by youskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 class	Cat : public Animal
 {
 	private:
+		Brain	*brain;
 
 	public:
-		Brain	*brain;
 		Cat();
 		~Cat();
 		Cat(const Cat &c);
