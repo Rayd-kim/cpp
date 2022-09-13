@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youskim <youskim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/13 16:22:17 by youskim           #+#    #+#             */
-/*   Updated: 2022/09/13 16:22:18 by youskim          ###   ########.fr       */
+/*   Created: 2022/09/13 16:34:56 by youskim           #+#    #+#             */
+/*   Updated: 2022/09/13 16:38:35 by youskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-Cat::Cat()
+WrongCat::WrongCat()
 {
-	type = "Cat";
-	std::cout << "Cat class is constructed" << std::endl;
+	type = "WrongCat";
+	std::cout << "WrongCat class is constructed" << std::endl;
 }
 
-Cat::~Cat()
+WrongCat::~WrongCat()
 {
-	std::cout << "Cat class is destructed" << std::endl;
+	std::cout << "WrongCat class is destructed" << std::endl;
 }
 
-Cat::Cat(const Cat &c)
+WrongCat::WrongCat(const WrongCat &c)
 {
 	(*this) = c;
 }
 
-Cat& Cat::operator=(const Cat &c)
+WrongCat& WrongCat::operator=(const WrongCat &c)
 {
-	Animal::operator=(c);
+	WrongAnimal::operator=(c);
 	return (*this);
 }
 
-void	Cat::makeSound(void) const
+void	WrongCat::makeSound(void) const
 {
 	std::cout << "Meow Meow" << std::endl;
 }

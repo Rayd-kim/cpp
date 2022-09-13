@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: youskim <youskim@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/13 14:42:30 by youskim           #+#    #+#             */
+/*   Updated: 2022/09/13 14:50:59 by youskim          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap()
@@ -39,8 +51,6 @@ void	ClapTrap::attack(const std::string& target)
 {
 	std::cout << name << " attacks " << target << ", causing " \
 	<< attack_damage << " points of damage!" << std::endl;
-
-
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
@@ -53,6 +63,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 		hit_point -= amount;
 	}
 }
+
 void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (hit_point == 0 && energy_point == 0)

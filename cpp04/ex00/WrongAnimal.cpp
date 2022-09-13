@@ -1,45 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youskim <youskim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/13 16:22:12 by youskim           #+#    #+#             */
-/*   Updated: 2022/09/13 16:22:13 by youskim          ###   ########.fr       */
+/*   Created: 2022/09/13 16:34:40 by youskim           #+#    #+#             */
+/*   Updated: 2022/09/13 16:37:21 by youskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-Animal::Animal()
+WrongAnimal::WrongAnimal()
 {
-	type = "Animal";
-	std::cout << "Animal class is constructed" << std::endl;
+	type = "WrongAnimal";
+	std::cout << "WrongAnimal class is constructed" << std::endl;
 }
 
-Animal::~Animal()
+WrongAnimal::~WrongAnimal()
 {
-	std::cout << "Animal class is destructed" << std::endl;
+	std::cout << "WrongAnimal class is destructed" << std::endl;
 }
 
-Animal::Animal(const Animal &a)
+WrongAnimal::WrongAnimal(const WrongAnimal &a)
 {
 	(*this) = a;
 }
 
-Animal& Animal::operator=(const Animal &a)
+WrongAnimal& WrongAnimal::operator=(const WrongAnimal &a)
 {
 	type = a.type;
 	return (*this);
 }
 
-std::string	Animal::getType(void) const
+std::string	WrongAnimal::getType(void) const
 {
 	return (type);
 }
 
-void	Animal::makeSound(void) const
+void	WrongAnimal::makeSound(void) const
 {
 	std::cout << "I'm just animal class, so can't make sound" << std::endl;
 }

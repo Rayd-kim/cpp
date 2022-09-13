@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: youskim <youskim@student.42.fr>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/09/13 16:22:34 by youskim           #+#    #+#              #
+#    Updated: 2022/09/13 16:41:03 by youskim          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = ex00
 
 COMPILE = c++ -Wall -Werror -Wextra -Wall
@@ -7,7 +19,9 @@ STD = -std=c++98
 FILE = main.cpp \
 		Animal.cpp \
 		Dog.cpp \
-		Cat.cpp
+		Cat.cpp \
+		WrongCat.cpp \
+		WrongAnimal.cpp
 
 OBJS = $(FILE:.cpp=.o)
 

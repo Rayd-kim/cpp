@@ -12,7 +12,7 @@ Fixed::Fixed(const Fixed &fixed)
 
 Fixed::Fixed(const int param)
 {
-	fixed_num = param * (1 << fract_bit);
+	fixed_num = param << fract_bit;
 }
 
 Fixed::Fixed(const float num)
@@ -26,12 +26,12 @@ Fixed::~Fixed()
 
 float	Fixed::toFloat(void) const
 {
-	return (float(fixed_num) / (1 << 8));
+	return (float(fixed_num) / (1 << fract_bit));
 }
 
 int		Fixed::toInt(void) const
 {
-	return (fixed_num >> 8);
+	return (fixed_num >> fract_bit);
 }
 
 Fixed&	Fixed::operator=(const Fixed &fixed)
@@ -144,7 +144,6 @@ bool	Fixed::operator!=(const Fixed &fixed) const
 
 Fixed& Fixed::min(Fixed &f1, Fixed &f2)
 {
-	std::cout << "not const" << std::endl;
 	if (f1 > f2)
 		return (f2);
 	else
@@ -153,7 +152,6 @@ Fixed& Fixed::min(Fixed &f1, Fixed &f2)
 
 const Fixed& Fixed::min(const Fixed &f1, const Fixed &f2)
 {
-	std::cout << "const" << std::endl;
 	if (f1 > f2)
 		return (f2);
 	else
@@ -162,7 +160,6 @@ const Fixed& Fixed::min(const Fixed &f1, const Fixed &f2)
 
 Fixed& Fixed::max(Fixed &f1, Fixed &f2)
 {
-	std::cout << "not const" << std::endl;
 	if (f1 > f2)
 		return (f1);
 	else
@@ -171,7 +168,6 @@ Fixed& Fixed::max(Fixed &f1, Fixed &f2)
 
 const Fixed& Fixed::max(const Fixed &f1, const Fixed &f2)
 {
-	std::cout << "const" << std::endl;
 	if (f1 > f2)
 		return (f1);
 	else

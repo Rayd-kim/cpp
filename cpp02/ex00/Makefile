@@ -1,4 +1,4 @@
-NAME = Fixed_point
+NAME = ex00
 
 COMPILE = c++ -Wall -Werror -Wextra 
 
