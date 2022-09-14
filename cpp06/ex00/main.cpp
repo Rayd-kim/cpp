@@ -11,9 +11,6 @@ int	main(int argc, char *argv[])
 	}
 	arg = argv[1];
 
-	conversion_c(arg);
-	conversion_i(arg);
-	conversion_f(arg);
-	conversion_d(arg);
+	conversion(arg);
 	return (0);
 }

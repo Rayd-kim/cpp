@@ -6,7 +6,7 @@
 /*   By: youskim <youskim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 19:05:21 by youskim           #+#    #+#             */
-/*   Updated: 2022/09/14 15:32:25 by youskim          ###   ########.fr       */
+/*   Updated: 2022/09/14 18:15:18 by youskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int	main(void)
 		Form	*form1 = intern.makeForm("shrubbery creation", "First");
 		Form	*form2 = intern.makeForm("robotomy request", "Second");
 		Form	*form3 = intern.makeForm("presidential pardon", "Third");
+		
 		// Form	*form4 = intern.makeForm("hi", "hi");
 		// if (form4 == NULL)
 		// 	std::cout << "NULL" << std::endl;

@@ -4,7 +4,9 @@ COMPILE = c++ -Wall -Werror -Wextra
 
 STD = -std=c++98
 
-FILE = main.cpp
+FILE = main.cpp \
+		Base.cpp \
+		function.cpp
 
 OBJS = $(FILE:.cpp=.o)
 
