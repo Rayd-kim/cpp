@@ -6,7 +6,7 @@
 #    By: youskim <youskim@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/13 19:05:26 by youskim           #+#    #+#              #
-#    Updated: 2022/09/14 14:47:42 by youskim          ###   ########.fr        #
+#    Updated: 2022/09/14 15:27:07 by youskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,8 @@ FILE = main.cpp \
 		Form.cpp \
 		ShrubberyCreationForm.cpp \
 		RobotomyRequestForm.cpp \
-		PresidentialPardonForm.cpp
+		PresidentialPardonForm.cpp \
+		Intern.cpp
 
 OBJS = $(FILE:.cpp=.o)
 

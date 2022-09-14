@@ -6,7 +6,7 @@
 /*   By: youskim <youskim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 19:05:21 by youskim           #+#    #+#             */
-/*   Updated: 2022/09/14 14:41:37 by youskim          ###   ########.fr       */
+/*   Updated: 2022/09/14 15:32:25 by youskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "PresidentialPardonForm.hpp"
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
+#include "Intern.hpp"
 
 int	main(void)
 {
@@ -32,10 +33,14 @@ int	main(void)
 		std::cout << c << std::endl;
 
 		std::cout << "\n----Form Construct----" << std::endl;
-		Form	*form1 = new ShrubberyCreationForm("first");
-		Form	*form2 = new RobotomyRequestForm("Second");
-		Form	*form3 = new PresidentialPardonForm("Thrid");
-		
+		Intern	intern;
+		Form	*form1 = intern.makeForm("shrubbery creation", "First");
+		Form	*form2 = intern.makeForm("robotomy request", "Second");
+		Form	*form3 = intern.makeForm("presidential pardon", "Third");
+		// Form	*form4 = intern.makeForm("hi", "hi");
+		// if (form4 == NULL)
+		// 	std::cout << "NULL" << std::endl;
+			
 		std::cout << "\n-----Sign-----" << std::endl;
 		a.signForm(*form1);
 		a.signForm(*form2);
