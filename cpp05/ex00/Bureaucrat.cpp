@@ -6,7 +6,7 @@
 /*   By: youskim <youskim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 19:04:17 by youskim           #+#    #+#             */
-/*   Updated: 2022/09/13 19:22:04 by youskim          ###   ########.fr       */
+/*   Updated: 2022/09/14 13:08:31 by youskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,23 +22,23 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
 	return ("Bureaucrat grade too Low");
 }
 
-Bureaucrat::Bureaucrat()
-{
-	std::cout << "Default constructor" << std::endl;
-	std::cout << "Please, input parameter name, grade" << std::endl;
-	if (grade < 1)
-		throw (Bureaucrat::GradeTooHighException());
-	else if (grade > 150)
-		throw (Bureaucrat::GradeTooLowException());
-}
+// Bureaucrat::Bureaucrat()
+// {
+// 	std::cout << "Default constructor" << std::endl;
+// 	std::cout << "Please, input parameter name, grade" << std::endl;
+// 	if (grade < 1)
+// 		throw (Bureaucrat::GradeTooHighException());
+// 	else if (grade > 150)
+// 		throw (Bureaucrat::GradeTooLowException());
+// }
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name), grade(grade)
 {
-	std::cout << name << " Constructor" << std::endl;
 	if (grade < 1)
 		throw (Bureaucrat::GradeTooHighException());
 	else if (grade > 150)
 		throw (Bureaucrat::GradeTooLowException());
+	std::cout << name << " Constructor" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &b) : name(b.name), grade(b.grade)

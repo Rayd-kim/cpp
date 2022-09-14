@@ -6,7 +6,7 @@
 /*   By: youskim <youskim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 19:05:33 by youskim           #+#    #+#             */
-/*   Updated: 2022/09/13 19:05:34 by youskim          ###   ########.fr       */
+/*   Updated: 2022/09/14 14:17:13 by youskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,21 @@ RobotomyRequestForm::RobotomyRequestForm(std::string name) : Form(name, 72, 45)
 	std::cout << name << " RobotomyRequestForm Constructor" << std::endl;
 }
 
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &R) :
+Form(R.getName(), R.getSignGrade(), R.getExecuteGrade())
+{
+	std::cout << "RobotomyRequestForm copy Constructor" << std::endl;
+}
+
 RobotomyRequestForm::~RobotomyRequestForm()
 {
-	std::cout << " RobotomyRequestForm Destructor" << std::endl;
+	std::cout << "RobotomyRequestForm Destructor" << std::endl;
+}
+
+RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm &R)
+{
+	Form::operator=(R);
+	return (*this);
 }
 
 void	RobotomyRequestForm::randRobot(void) const

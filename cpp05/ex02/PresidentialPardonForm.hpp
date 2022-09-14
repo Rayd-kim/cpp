@@ -6,7 +6,7 @@
 /*   By: youskim <youskim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 19:05:31 by youskim           #+#    #+#             */
-/*   Updated: 2022/09/13 19:05:31 by youskim          ###   ########.fr       */
+/*   Updated: 2022/09/14 14:14:00 by youskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ class	PresidentialPardonForm : public	Form
 {
 	private:
 		PresidentialPardonForm();
-		PresidentialPardonForm(const PresidentialPardonForm& P);
-		PresidentialPardonForm& operator=(const PresidentialPardonForm &P);
+		
 	public:
 		PresidentialPardonForm(std::string name);
+		PresidentialPardonForm(const PresidentialPardonForm& P);
 		~PresidentialPardonForm();
+		PresidentialPardonForm& operator=(const PresidentialPardonForm &P);
 
 		bool	execute(Bureaucrat const &executor) const;
 };
-
 
 #endif

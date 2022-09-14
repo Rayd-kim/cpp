@@ -6,7 +6,7 @@
 /*   By: youskim <youskim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 19:05:21 by youskim           #+#    #+#             */
-/*   Updated: 2022/09/13 19:05:22 by youskim          ###   ########.fr       */
+/*   Updated: 2022/09/14 14:41:37 by youskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,19 +32,19 @@ int	main(void)
 		std::cout << c << std::endl;
 
 		std::cout << "\n----Form Construct----" << std::endl;
-		ShrubberyCreationForm	form1("First");
-		RobotomyRequestForm		form2("Second");
-		PresidentialPardonForm	form3("Third");
-
+		Form	*form1 = new ShrubberyCreationForm("first");
+		Form	*form2 = new RobotomyRequestForm("Second");
+		Form	*form3 = new PresidentialPardonForm("Thrid");
+		
 		std::cout << "\n-----Sign-----" << std::endl;
-		a.signForm(form1);
-		a.signForm(form2);
-		a.signForm(form3);
+		a.signForm(*form1);
+		a.signForm(*form2);
+		a.signForm(*form3);
 
 		std::cout << "\n-----Execute-----" << std::endl;
-		a.executeForm(form1);
-		a.executeForm(form2);
-		a.executeForm(form3);
+		a.executeForm(*form1);
+		a.executeForm(*form2);
+		a.executeForm(*form3);
 		// b.executeForm(form1);
 		// b.executeForm(form2);
 		// b.executeForm(form3);
@@ -52,6 +52,9 @@ int	main(void)
 		// c.executeForm(form2);
 		// c.executeForm(form3);
 		std::cout << "\n----Destruct----" << std::endl;
+		delete form1;
+		delete form2;
+		delete form3;
 	}
 	catch(const std::exception& e)
 	{

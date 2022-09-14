@@ -6,7 +6,7 @@
 /*   By: youskim <youskim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 19:04:43 by youskim           #+#    #+#             */
-/*   Updated: 2022/09/13 19:04:44 by youskim          ###   ########.fr       */
+/*   Updated: 2022/09/14 13:09:47 by youskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ class	Bureaucrat
 	private:
 		const std::string	name;
 		int	grade;
+		Bureaucrat();
 
 	public:
-		Bureaucrat();
 		Bureaucrat(const std::string name, int grade);
 		Bureaucrat(const Bureaucrat &b);
 		~Bureaucrat();

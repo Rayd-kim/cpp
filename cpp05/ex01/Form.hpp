@@ -6,7 +6,7 @@
 /*   By: youskim <youskim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 19:04:50 by youskim           #+#    #+#             */
-/*   Updated: 2022/09/13 19:04:50 by youskim          ###   ########.fr       */
+/*   Updated: 2022/09/14 13:10:37 by youskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ class	Form
 		bool	sign;
 		const int	grade_sign;
 		const int	grade_execute;
+		Form();
 
 	public:
-		Form();
 		Form(const Form &f);
 		Form(std::string name, int sign, int execute);
 		~Form();

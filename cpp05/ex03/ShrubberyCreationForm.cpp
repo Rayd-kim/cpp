@@ -6,7 +6,7 @@
 /*   By: youskim <youskim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 19:05:39 by youskim           #+#    #+#             */
-/*   Updated: 2022/09/13 19:05:39 by youskim          ###   ########.fr       */
+/*   Updated: 2022/09/14 14:46:51 by youskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,22 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string name) : Form(name, 145,
 	std::cout << getName() << " ShrubberyCreationForm Constructor" << std::endl;
 }
 
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &S) :
+Form(S.getName(), S.getSignGrade(), S.getExecuteGrade())
+{
+	std::cout << "Shrubbery copy constructor" << std::endl;
+}
+
+
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 	std::cout << getName() << " ShrubberyCreationForm Destructor" << std::endl;
+}
+
+ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm &S)
+{
+	Form::operator=(S);
+	return (*this);
 }
 
 const char* ShrubberyCreationForm::FileOpenError::what() const throw()
@@ -30,8 +43,13 @@ const char* ShrubberyCreationForm::FileOpenError::what() const throw()
 void	ShrubberyCreationForm::executeShrubbery(void) const
 {
 	std::ofstream	file(getName());
-	std::string	tree =  "12345\n"
-						"12345678";
+	std::string	tree =  "-----O-----\n"
+						"----OOO----\n"
+						"---OOOOO---\n"
+						"--OOOOOOO--\n"
+						"-OOOOOOOOO-\n"
+						"----[ ]----\n"
+						"----[ ]----\n";
 
 	if (!(file.fail()))
 	{
@@ -40,6 +58,7 @@ void	ShrubberyCreationForm::executeShrubbery(void) const
 	else
 		throw (ShrubberyCreationForm::FileOpenError());
 	file.close();
+	std::cout << "Shrubbery Creation" << std::endl;
 }
 
 bool	ShrubberyCreationForm::execute(Bureaucrat const &executor) const

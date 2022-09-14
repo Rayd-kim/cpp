@@ -6,7 +6,7 @@
 /*   By: youskim <youskim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 19:05:41 by youskim           #+#    #+#             */
-/*   Updated: 2022/09/13 19:05:41 by youskim          ###   ########.fr       */
+/*   Updated: 2022/09/14 14:04:19 by youskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ class ShrubberyCreationForm : public Form
 {
 	private:
 		ShrubberyCreationForm();
-		ShrubberyCreationForm(const ShrubberyCreationForm &S);
-		ShrubberyCreationForm& operator=(const ShrubberyCreationForm &S);
 
 	public:
 		ShrubberyCreationForm(std::string name);
+		ShrubberyCreationForm(const ShrubberyCreationForm &S);
+		ShrubberyCreationForm& operator=(const ShrubberyCreationForm &S);
 		~ShrubberyCreationForm();
 
 		void	executeShrubbery(void) const;
@@ -38,6 +38,5 @@ class ShrubberyCreationForm : public Form
 				const char* what() const throw();
 		};
 };
-
 
 # endif

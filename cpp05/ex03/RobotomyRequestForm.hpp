@@ -6,7 +6,7 @@
 /*   By: youskim <youskim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 19:05:36 by youskim           #+#    #+#             */
-/*   Updated: 2022/09/13 19:05:37 by youskim          ###   ########.fr       */
+/*   Updated: 2022/09/14 14:07:57 by youskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,14 @@ class	Form;
 
 class RobotomyRequestForm : public Form
 {
-	public:
+	private:
 		RobotomyRequestForm();
+
+	public:
 		RobotomyRequestForm(std::string name);
 		RobotomyRequestForm(const RobotomyRequestForm& R);
 		~RobotomyRequestForm();
+		RobotomyRequestForm& operator=(const RobotomyRequestForm &R);
 
 		bool	execute(Bureaucrat const &executor) const;
 		void	randRobot(void) const;
