@@ -23,7 +23,7 @@ void	conversion_c(std::string arg)
 		if (i < 33 || i > 126)
 			std::cout << "Not displayable" << std::endl;
 		else
-			std::cout << "\'" <<(char)i << "\'" << std::endl;
+			std::cout << "\'" << static_cast<char>(i) << "\'" << std::endl;
 	}
 	catch(...)
 	{
@@ -37,7 +37,7 @@ void	conversion_f(std::string arg)
 	{
 		std::cout << "float: ";
 		float f = std::stof(arg);
-		std::cout << f << "f" << std::endl;
+		std::cout << static_cast<float>(f) << "f" << std::endl;
 	}
 	catch(...)
 	{

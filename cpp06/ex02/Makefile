@@ -1,11 +1,10 @@
-NAME = ex01
+NAME = ex02
 
 COMPILE = c++ -Wall -Werror -Wextra
 
 STD = -std=c++98
 
-FILE = main.cpp \
-		Serialize.cpp
+FILE = main.cpp
 
 OBJS = $(FILE:.cpp=.o)
 

@@ -36,6 +36,17 @@ class	C : public Base
 		};
 };
 
+Base	*generate(void)
+{
+	srand(time(NULL));
+
+	if (rand() % 3 == 1)
+		return (new A);
+	else if (rand() % 3 == 2)
+		return (new B);
+	else
+		return (new C);
+}
 
 void	identify(Base* p)
 {
@@ -62,11 +73,35 @@ void	identify(Base* p)
 	}
 }
 
+void	identify(Base &p)
+{
+	try
+	{
+		A &a = dynamic_cast<A&>(p);
+		std::cout << "P is A" << std::endl;
+		a.~A();
+	}
+	catch(...)
+	{
+		try
+		{
+			B &b = dynamic_cast<B&>(p);
+			std::cout << "P is B" << std::endl;
+			b.~B();
+		}
+		catch(...)
+		{
+			std::cout << "P is C" << std::endl;
+		}
+	}
+}
+
 int	main(void)
 {
-	Base *base = new C();
+	Base *base = generate();
 
 	identify(base);
+	identify(*base);
 	delete base;
 	return (0);
 }
