@@ -6,7 +6,7 @@
 /*   By: youskim <youskim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 19:05:21 by youskim           #+#    #+#             */
-/*   Updated: 2022/09/14 18:15:18 by youskim          ###   ########.fr       */
+/*   Updated: 2022/09/19 13:31:31 by youskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(void)
 {
 	try
 	{
-		// Bureaucrat	excep("excep", 0);
+		Bureaucrat	excep("excep", 151);
 		std::cout << "\n-----Bureaucrat Construct-----" << std::endl;
 		Bureaucrat	a("A", 1);
 		Bureaucrat	b("B", 30);
