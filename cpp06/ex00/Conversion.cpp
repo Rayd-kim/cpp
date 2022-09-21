@@ -4,7 +4,7 @@ void	conversion(std::string arg)
 {
 	if( (arg[0] > 32 && arg[0] < 127) && !(arg[0] >= '0' && arg[0] <= '9') && arg.length() == 1)
 		conversion_c(arg);
-	else if (static_cast<int>(arg.find('f')) != -1 || \
+	else if ((static_cast<int>(arg.find('f')) != -1 && check_inf_nan(arg) != DOU) || \
 			(static_cast<int>(arg.find('f')) != -1 && static_cast<int>(arg.find('.')) != -1) || check_inf_nan(arg) == FLO)
 		conversion_f(arg);
 	else if (check_inf_nan(arg) == DOU || static_cast<int>(arg.find('.')) != -1)
@@ -25,108 +25,77 @@ void	conversion_c(std::string arg)
 	std::cout << "int: " << i << std::endl;
 	std::cout << "float: " << f << "f" << std::endl;
 	std::cout << "double: " << d << std::endl;
-
 }
 
 void	conversion_i(std::string arg)
 {
-	try
-	{
-		int	i = std::stoi(arg);
-		unsigned char c = static_cast<unsigned char>(i);
-		float f = static_cast<float>(i);
-		double d = static_cast<double>(i);
+	int	i = atoi(arg.c_str());
+	unsigned char c = static_cast<unsigned char>(i);
+	float f = static_cast<float>(i);
+	double d = static_cast<double>(i);
 
-		if (i < 0 || i > 127)
-			std::cout << "char: " << "impossible" << std::endl;
-		else if (c < 33 || c > 126)
-			std::cout << "char: " << "Not displayable" << std::endl;
-		else
-			std::cout << "char: " << "\'" << c << "\'" << std::endl;
-		std::cout << "int: " << i << std::endl;
-		std::cout << "float: " << f << "f" << std::endl;
-		std::cout << "double: " << d << std::endl;
-	}
-	catch(...)
-	{
-		std::cout << "char: conversion impossible" << std::endl;
-		std::cout << "int: conversion impossible" << std::endl;
-		std::cout << "float: conversion impossible" << std::endl;
-		std::cout << "double: conversion impossible" << std::endl;
-	}
+	if (i < 0 || i > 127)
+		std::cout << "char: " << "impossible" << std::endl;
+	else if (c < 33 || c > 126)
+		std::cout << "char: " << "Not displayable" << std::endl;
+	else
+		std::cout << "char: " << "\'" << c << "\'" << std::endl;
+	std::cout << "int: " << i << std::endl;
+	std::cout << "float: " << f << "f" << std::endl;
+	std::cout << "double: " << d << std::endl;
 }
 
 
 void	conversion_f(std::string arg)
 {
-	try
-	{
-		float f = std::stof(arg);
-		int	i = static_cast<int>(f);
-		unsigned char c = static_cast<unsigned char>(f);
-		double d = static_cast<double>(f);
+	float f = atof(arg.c_str());
+	int	i = static_cast<int>(f);
+	unsigned char c = static_cast<unsigned char>(f);
+	double d = static_cast<double>(f);
 
-		if (check_inf_nan(arg) == FLO)
-		{
-			std::cout << "char: impossible" << std::endl;
-			std::cout << "int: impossible" << std::endl;
-			std::cout << "float: " << f << "f" << std::endl;
-			std::cout << "double: " << d << std::endl;
-			return ;
-		}
-		else if (i < 0 || i > 127)
-			std::cout << "char: " << "impossible" << std::endl;
-		else if (c < 33 || c > 126)
-			std::cout << "char: " << "Not displayable" << std::endl;
-		else
-			std::cout << "char: " << "\'" << c << "\'" << std::endl;
-		std::cout << "int: " << i << std::endl;
+	if (check_inf_nan(arg) == FLO)
+	{
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
 		std::cout << "float: " << f << "f" << std::endl;
 		std::cout << "double: " << d << std::endl;
+		return ;
 	}
-	catch(...)
-	{
-		std::cout << "char: conversion impossible" << std::endl;
-		std::cout << "int: conversion impossible" << std::endl;
-		std::cout << "float: conversion impossible" << std::endl;
-		std::cout << "double: conversion impossible" << std::endl;
-	}
+	else if (i < 0 || i > 127)
+		std::cout << "char: " << "impossible" << std::endl;
+	else if (c < 33 || c > 126)
+		std::cout << "char: " << "Not displayable" << std::endl;
+	else
+		std::cout << "char: " << "\'" << c << "\'" << std::endl;
+	std::cout << "int: " << i << std::endl;
+	std::cout << "float: " << f << "f" << std::endl;
+	std::cout << "double: " << d << std::endl;
 }
 
 void	conversion_d(std::string arg)
 {
-	try
-	{
-		double d = std::stod(arg);
-		int	i = static_cast<int>(d);
-		unsigned char c = static_cast<unsigned char>(d);
-		float f = static_cast<float>(d);
+	double d = strtod(arg.c_str(), NULL);
+	int	i = static_cast<int>(d);
+	unsigned char c = static_cast<unsigned char>(d);
+	float f = static_cast<float>(d);
 
-		if (check_inf_nan(arg) == DOU)
-		{
-			std::cout << "char: impossible" << std::endl;
-			std::cout << "int: impossible" << std::endl;
-			std::cout << "float: " << f << "f" << std::endl;
-			std::cout << "double: " << d << std::endl;
-			return ;
-		}
-		else if (i < 0 || i > 127)
-			std::cout << "char: " << "impossible" << std::endl;
-		else if (c < 33 || c > 126)
-			std::cout << "char: " << "Not displayable" << std::endl;
-		else
-			std::cout << "char: " << "\'" << c << "\'" << std::endl;
-		std::cout << "int: " << i << std::endl;
+	if (check_inf_nan(arg) == DOU)
+	{
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
 		std::cout << "float: " << f << "f" << std::endl;
 		std::cout << "double: " << d << std::endl;
+		return ;
 	}
-	catch(...)
-	{
-		std::cout << "char: conversion impossible" << std::endl;
-		std::cout << "int: conversion impossible" << std::endl;
-		std::cout << "float: conversion impossible" << std::endl;
-		std::cout << "double: conversion impossible" << std::endl;
-	}
+	else if (i < 0 || i > 127)
+		std::cout << "char: " << "impossible" << std::endl;
+	else if (c < 33 || c > 126)
+		std::cout << "char: " << "Not displayable" << std::endl;
+	else
+		std::cout << "char: " << "\'" << c << "\'" << std::endl;
+	std::cout << "int: " << i << std::endl;
+	std::cout << "float: " << f << "f" << std::endl;
+	std::cout << "double: " << d << std::endl;
 }
 
 int	check_inf_nan(std::string arg)
