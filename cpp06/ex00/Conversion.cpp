@@ -6,7 +6,7 @@
 /*   By: youskim <youskim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 16:24:59 by youskim           #+#    #+#             */
-/*   Updated: 2022/09/21 16:25:00 by youskim          ###   ########.fr       */
+/*   Updated: 2022/09/21 20:42:51 by youskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,18 @@ void	conversion_i(std::string arg)
 		std::cout << "char: " << "Not displayable" << std::endl;
 	else
 		std::cout << "char: " << "\'" << c << "\'" << std::endl;
-	std::cout << "int: " << i << std::endl;
-	std::cout << "float: " << f << "f" << std::endl;
-	std::cout << "double: " << d << std::endl;
+	if (static_cast<int>(strtod(arg.c_str(), NULL)) == -2147483648 && arg.compare("-2147483648") != 0)
+	{
+		std::cout <<"int: " << "impossible" << std::endl;
+		std::cout <<"int: " << "impossible" << std::endl;
+		std::cout <<"int: " << "impossible" << std::endl;
+	}
+	else
+	{
+		std::cout << "int: " << i << std::endl;
+		std::cout << "float: " << f << "f" << std::endl;
+		std::cout << "double: " << d << std::endl;
+	}
 }
 
 
