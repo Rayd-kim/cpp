@@ -6,7 +6,7 @@
 #    By: youskim <youskim@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/19 16:01:12 by youskim           #+#    #+#              #
-#    Updated: 2022/09/19 19:59:08 by youskim          ###   ########.fr        #
+#    Updated: 2022/09/21 16:27:54 by youskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ COMPILE = c++ -Wall -Werror -Wextra
 
 STD = -std=c++98
 
-FILE = main.cpp
+FILE = main.cpp \
+		Array.cpp
 
 OBJS = $(FILE:.cpp=.o)
 
