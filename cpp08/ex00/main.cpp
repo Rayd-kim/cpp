@@ -5,23 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: youskim <youskim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/19 15:45:23 by youskim           #+#    #+#             */
-/*   Updated: 2022/09/26 18:05:13 by youskim          ###   ########.fr       */
+/*   Created: 2022/09/26 15:37:41 by youskim           #+#    #+#             */
+/*   Updated: 2022/09/26 16:20:21 by youskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "iter.hpp"
+#include "easyfind.hpp"
 
 int	main(void)
 {
-	int	a[5] = {1, 2, 3, 4, 5};
-	char	b[6] = "abcde";
+	std::vector<int> a;
 
-	std::cout << "Int array" << std::endl;
-	iter<int>(a, 5, &call_element);
-
-	std::cout << "\nChar array" << std::endl;
-	iter<char>(b, 5, &call_element);
-
+	a.push_back(1);
+	a.push_back(2);
+	a.push_back(3);
+	a.push_back(4);
+	a.push_back(5);
+	
+	easyfind(a, 6);
 	return (0);
 }

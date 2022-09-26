@@ -67,7 +67,8 @@
 		"complex": "cpp",
 		"optional": "cpp",
 		"unordered_map": "cpp",
-		"filesystem": "cpp"
+		"filesystem": "cpp",
+		"list": "cpp"
 	},
 	"C_Cpp.default.configurationProvider": "ms-vscode.makefile-tools"
 }

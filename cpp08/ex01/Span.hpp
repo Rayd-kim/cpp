@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youskim <youskim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/19 15:45:23 by youskim           #+#    #+#             */
-/*   Updated: 2022/09/26 18:05:13 by youskim          ###   ########.fr       */
+/*   Created: 2022/09/26 16:29:40 by youskim           #+#    #+#             */
+/*   Updated: 2022/09/26 16:34:34 by youskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "iter.hpp"
+#ifndef SPAN_HPP
+#define SPAN_HPP
 
-int	main(void)
+#include <vector>
+
+class Span
 {
-	int	a[5] = {1, 2, 3, 4, 5};
-	char	b[6] = "abcde";
+	private:
+		std::vector<unsigned int>	arr;
 
-	std::cout << "Int array" << std::endl;
-	iter<int>(a, 5, &call_element);
+	public:
+		Span();
+		Span(int N);
+		~Span();
 
-	std::cout << "\nChar array" << std::endl;
-	iter<char>(b, 5, &call_element);
+};
 
-	return (0);
-}
+#endif

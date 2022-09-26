@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: youskim <youskim@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/09/19 16:01:12 by youskim           #+#    #+#              #
-#    Updated: 2022/09/26 18:08:49 by youskim          ###   ########.fr        #
+#    Created: 2022/09/26 15:37:35 by youskim           #+#    #+#              #
+#    Updated: 2022/09/26 15:55:08 by youskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex02
+NAME = ex00
 
 COMPILE = c++ -Wall -Werror -Wextra
 
