@@ -6,7 +6,7 @@
 /*   By: youskim <youskim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 15:37:47 by youskim           #+#    #+#             */
-/*   Updated: 2022/09/26 16:25:12 by youskim          ###   ########.fr       */
+/*   Updated: 2022/09/28 13:27:12 by youskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,51 +14,17 @@
 # define EASYFIND_HPP
 
 #include <iostream>
-#include <vector>
-#include <deque>
-#include <list>
+// #include <vector>
+// #include <deque>
+// #include <list>
 #include <iterator>
 
 template <typename T>
-void	easyfind(std::vector<T>& a, int i)
+void	easyfind(T& container, int i)
 {
-	typename std::vector<T>::iterator iter = a.begin();
+	typename T::iterator iter = container.begin();
 
-	for (; iter != a.end(); iter++)
-	{
-		if (i == *iter)
-		{
-			std::cout << *iter << std::endl;
-			return ;
-		}
-
-	}
-	std::cout << "Can't find " << i << std::endl;
-}
-
-template <typename T>
-void	easyfind(std::list<T>& a, int i)
-{
-	typename std::list<T>::iterator iter = a.begin();
-
-	for (; iter != a.end(); iter++)
-	{
-		if (i == *iter)
-		{
-			std::cout << *iter << std::endl;
-			return ;
-		}
-
-	}
-	std::cout << "Can't find " << i << std::endl;
-}
-
-template <typename T>
-void	easyfind(std::deque<T>& a, int i)
-{
-	typename std::deque<T>::iterator iter = a.begin();
-
-	for (; iter != a.end(); iter++)
+	for (; iter != container.end(); iter++)
 	{
 		if (i == *iter)
 		{
@@ -66,7 +32,7 @@ void	easyfind(std::deque<T>& a, int i)
 			return ;
 		}
 	}
-	std::cout << "Can't find " << i << std::endl;
+	std::cerr << "Can't find " << i << std::endl;
 }
 
 # endif

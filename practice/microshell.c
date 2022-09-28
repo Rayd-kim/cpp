@@ -5,6 +5,11 @@
 #include <signal.h>
 #include <string.h>
 
+typedef struct s_node {
+	struct s_list	*list;
+	struct s_node	*next;
+}		t_node;
+
 typedef struct s_list {
 	int	fd_in;
 	int fd_out;
@@ -13,7 +18,7 @@ typedef struct s_list {
 	struct s_list	*next;
 }		t_list;
 
-t_list	*set_list(void)
+t_list	*make_list(void)
 {
 	t_list	*ret;
 
@@ -26,66 +31,8 @@ t_list	*set_list(void)
 	return (ret);
 }
 
-t_list	*make_list(int argc, char *argv[])
-{
-	int	i = 1;
-	int	cmd_num = 0;
-	t_list	*ret;
-	t_list	*temp;
-
-	ret = set_list();
-	temp = ret;
-	while (i < argc)
-	{
-		if (strcmp(argv[i], "|") == 0 || i == argc - 1)
-		{
-			if (i == argc - 1)
-				cmd_num++;
-			temp->cmd = (char**)malloc(sizeof(char *) * (cmd_num + 1));
-			temp->cmd[cmd_num] = NULL;
-			cmd_num = 0;
-			if (strcmp(argv[i], "|") == 0)
-			{
-				temp->next = set_list();
-				temp = temp->next;
-			}
-			i++;
-		}
-		else
-		{
-			cmd_num++;
-			i++;
-		}
-	}
-	return (ret);
-}
-
-void	parsing(int argc, char *argv[], t_list *top)
-{
-	int	i = 1;
-	int	j = 0;
-
-	while (i < argc)
-	{
-		if (strcmp(argv[i], "|") == 0)
-		{
-			top = top->next;
-			j = 0;
-			i++;
-		}
-		else
-		{
-			top->cmd[j] = argv[i];
-			// printf("%d cmd %s\n", j, top->cmd[j]);
-			j++;
-			i++;
-		}
-	}
-}
-
 void	do_cmd(t_list *top, char **envp)
 {
-	pid_t	pid;
 	int		fd[2];
 
 	pipe(fd);
@@ -135,28 +82,99 @@ void	exe_cmd(t_list *top, char **envp)
 	}
 }
 
-void	free_list(t_list *top)
+t_node	*make_node(void)
 {
-	t_list	*temp;
-	
-	while (top != NULL)
+	t_node	*ret;
+
+	ret = (t_node*)malloc(sizeof(t_list));
+	if (ret == NULL)
+		exit(1);
+	ret->list = make_list();
+	ret->next = NULL;
+	return (ret);
+}
+
+void	set_node(int argc, char *argv[], t_node *top)
+{
+	int	i = 1;
+	int	cmd_num = 0;
+	t_list	*list = top->list;
+
+	while (i < argc)
 	{
-		free(top->cmd);
-		temp = top;
-		top = top->next;
-		free(temp);
+		if (strcmp("|", argv[i]) == 0 || i == argc - 1 || strcmp(";", argv[i]) == 0)
+		{
+			if (i == argc - 1 && strcmp("|", argv[i]) != 0 && strcmp(";", argv[i]) != 0)
+				cmd_num++;
+			if (cmd_num != 0)
+			{
+				list->cmd = (char**)malloc(sizeof(char*) * (cmd_num + 1));
+				if (list->cmd == NULL)
+					exit(1);
+				list->cmd[cmd_num] = NULL;
+			}
+			if (strcmp("|", argv[i]) == 0)
+			{
+				list->next = make_list();
+				list = list->next;
+			}
+			else if (strcmp(";", argv[i]) == 0)
+			{
+				top->next = make_node();
+				top = top->next;
+				list = top->list;
+			}
+			cmd_num = 0;
+		}
+		else
+			cmd_num++;
+		i++;
+	}
+}
+
+void	parsing(int argc, char *argv[], t_node *top)
+{
+	int	i = 1;
+	int	j = 0;
+	t_list	*list = top->list;
+
+	while (i < argc)
+	{
+		if (strcmp(";", argv[i]) == 0)
+		{
+			top = top->next;
+			list = top->list;
+			j = 0;
+		}
+		else if (strcmp("|", argv[i]) == 0)
+		{
+			list = list->next;
+			j = 0;
+		}
+		else
+		{
+			list->cmd[j] = argv[i];
+			j++;
+		}
+		i++;
 	}
 }
 
 int	main(int argc, char *argv[], char **envp)
 {
-	t_list	*top;
+	t_node	*top;
+	t_node	*temp;
 
 	if (argc == 1)
 		return (0);
-	top = make_list(argc, argv);
+	top = make_node();
+	set_node(argc, argv, top);
 	parsing(argc, argv, top);
-	exe_cmd(top, envp);
-	free_list(top);
-	system("leaks a.out");
+	temp = top;
+	while (temp != NULL)
+	{
+		if (temp->list->cmd != NULL)
+			exe_cmd(temp->list, envp);
+		temp = temp->next;
+	}
 }
