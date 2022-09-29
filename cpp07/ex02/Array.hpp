@@ -6,7 +6,7 @@
 /*   By: youskim <youskim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 16:01:38 by youskim           #+#    #+#             */
-/*   Updated: 2022/09/28 17:04:02 by youskim          ###   ########.fr       */
+/*   Updated: 2022/09/29 16:47:09 by youskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ Array<T>&	Array<T>::operator=(const Array<T> &a)
 	len = a.size();
 	arr = new T[len];
 	for (int i = 0; i < len; i++)
-		arr[i] = a.arr()[i];
+		arr[i] = a.arr[i];
 	return (*this);
 }
 
@@ -79,7 +79,7 @@ Array<T>::Array(const Array<T> &a)
 	len = a.size();
 	arr = new T[len];
 	for (int i = 0; i < len; i++)
-		arr[i] = a.arr()[i];
+		arr[i] = a.arr[i];
 }
 
 template <class T>

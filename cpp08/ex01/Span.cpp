@@ -6,7 +6,7 @@
 /*   By: youskim <youskim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 16:29:46 by youskim           #+#    #+#             */
-/*   Updated: 2022/09/28 19:27:58 by youskim          ###   ########.fr       */
+/*   Updated: 2022/09/29 19:43:31 by youskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 Span::Span()
 {
-	// arr.resize(0);
+	arr.reserve(0);
 	len = 0;
 }
 
 Span::Span(unsigned int N)
 {
-	// arr.resize(N, 0);
+	arr.reserve(N);
 	len = N;
 }
 
@@ -76,8 +76,9 @@ int	Span::longestSpan(void)
 	{
 		if (arr.size() == 0 || arr.size() == 1)
 			throw(std::exception());
-		std::sort(arr.begin(), arr.end());
-		return (*(arr.end() - 1) - *arr.begin());
+		// std::sort(arr.begin(), arr.end());
+		// return (*(arr.end() - 1) - *arr.begin());
+		return (*(max_element(arr.begin(), arr.end())) - *(min_element(arr.begin(), arr.end())));
 	}
 	catch (std::exception &e)
 	{
