@@ -6,7 +6,7 @@
 /*   By: youskim <youskim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 16:29:46 by youskim           #+#    #+#             */
-/*   Updated: 2022/09/30 14:12:06 by youskim          ###   ########.fr       */
+/*   Updated: 2022/09/30 15:00:02 by youskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	Span::addNumber(int i)
 	}
 	catch (std::exception &e)
 	{
-		std::cerr << e.what() << std::endl;
+		std::cerr << i << " can't add. Because " << e.what() << std::endl;
 	}
 }
 
@@ -84,12 +84,12 @@ int	Span::longestSpan(void)
 
 const char*	Span::NotSpan::what() const throw()
 {
-	return ("This Span too short");
+	return ("Span too short");
 }
 
 const char*	Span::SpanFull::what() const throw()
 {
-	return ("This Span is already full");
+	return ("Span is already full");
 }
 
 std::vector<int>	Span::getVector(void) const
@@ -97,29 +97,25 @@ std::vector<int>	Span::getVector(void) const
 	return (arr);
 }
 
-void	Span::addNumber(std::vector<int>::iterator start, std::vector<int>::iterator end)
+void	Span::addNumber(std::vector<int>::iterator start, std::vector<int>::const_iterator end)
 {
 	
-	// try
-	// {
-
-		std::cout << "add " << std::endl;
+	try
+	{
+		std::vector<int>::iterator itr = start;
 		
 		for (; start != end; start++)
 		{
-			addNumber(*start + 1);
-			std::cout << "add " << *start + 1 << std::endl;
-			// if (arr.size() < len)
-			// {
-				
-			// }
-			// else
-			// 	throw(Span::SpanFull());
-
+			// addNumber(*itr + 1);
+			itr = arr.end() - 1;
+			if (arr.size() < len)
+				arr.push_back(*itr + 1);
+			else
+				throw(Span::SpanFull());
 		}
-	// }
-	// catch(std::exception &e)
-	// {
-	// 	std::cerr << e.what() << std::endl;
-	// }
+	}
+	catch(std::exception &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 }
