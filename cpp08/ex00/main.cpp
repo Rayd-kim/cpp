@@ -6,7 +6,7 @@
 /*   By: youskim <youskim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 15:37:41 by youskim           #+#    #+#             */
-/*   Updated: 2022/09/28 17:22:02 by youskim          ###   ########.fr       */
+/*   Updated: 2022/09/30 12:57:40 by youskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ int	main(void)
 	a.push_back(3);
 	a.push_back(4);
 	a.push_back(5);
-	
-	easyfind(a, 4);
 
 	std::deque<int> b;
 
@@ -35,8 +33,6 @@ int	main(void)
 	b.push_back(4);
 	b.push_back(5);
 
-	easyfind(b, 7);
-
 	std::list<int> c;
 
 	c.push_back(1);
@@ -45,6 +41,16 @@ int	main(void)
 	c.push_back(4);
 	c.push_back(5);
 	
-	easyfind(c, 3);
+	try
+	{
+		std::cout << *easyfind(a, 1) << std::endl;
+		std::cout << *easyfind(b, 5) << std::endl;
+		std::cout << *easyfind(c, 7) << std::endl;
+	}
+	catch(std::exception &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+
 	return (0);
 }

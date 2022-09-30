@@ -6,7 +6,7 @@
 /*   By: youskim <youskim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 16:29:46 by youskim           #+#    #+#             */
-/*   Updated: 2022/09/29 19:43:31 by youskim          ###   ########.fr       */
+/*   Updated: 2022/09/30 14:12:06 by youskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,18 @@ Span::~Span()
 {
 }
 
+Span::Span(const Span &s) : arr(s.arr)
+{
+	len = s.len;
+}
+
+Span& Span::operator=(const Span &s)
+{
+	arr = s.arr;
+	len = s.len;
+	return (*this);
+}
+
 void	Span::addNumber(int i)
 {
 	try
@@ -35,54 +47,79 @@ void	Span::addNumber(int i)
 	if (arr.size() < len)
 		arr.push_back(i);
 	else
-		throw(std::exception());
+		throw(Span::SpanFull());
 	}
 	catch (std::exception &e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 }
 
 int	Span::shortestSpan(void)
 {
-	try
-	{
-		if (arr.size() == 0 || arr.size() == 1)
-			throw(std::exception());
+	if (arr.size() == 0 || arr.size() == 1)
+		throw(Span::NotSpan());
 
-		std::sort(arr.begin(), arr.end());
-		std::vector<int>::iterator itr = arr.begin();
-		std::vector<int>::iterator prev;
-		int min = *(itr + 1) - *itr;
-		while (itr != arr.end() - 1)
-		{
-			prev = itr;
-			itr++;
-			if (min > *itr - *prev)
-				min = *itr - *prev;
-		}
-		return (min);
-	}
-	catch (std::exception &e)
+	std::vector<int> temp(arr);
+	std::sort(temp.begin(), temp.end());
+	std::vector<int>::iterator itr = temp.begin();
+	std::vector<int>::iterator prev;
+	int min = *(itr + 1) - *itr;
+	while (itr != temp.end() - 1)
 	{
-		std::cout << e.what() << std::endl;
+		prev = itr;
+		itr++;
+		if (min > *itr - *prev)
+			min = *itr - *prev;
 	}
-	return (-1);
+	return (min);
 }
 
 int	Span::longestSpan(void)
 {
-	try
-	{
-		if (arr.size() == 0 || arr.size() == 1)
-			throw(std::exception());
-		// std::sort(arr.begin(), arr.end());
-		// return (*(arr.end() - 1) - *arr.begin());
-		return (*(max_element(arr.begin(), arr.end())) - *(min_element(arr.begin(), arr.end())));
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	return (-1);
+	if (arr.size() == 0 || arr.size() == 1)
+		throw(Span::NotSpan());
+	return (*(max_element(arr.begin(), arr.end())) - *(min_element(arr.begin(), arr.end())));
+}
+
+const char*	Span::NotSpan::what() const throw()
+{
+	return ("This Span too short");
+}
+
+const char*	Span::SpanFull::what() const throw()
+{
+	return ("This Span is already full");
+}
+
+std::vector<int>	Span::getVector(void) const
+{
+	return (arr);
+}
+
+void	Span::addNumber(std::vector<int>::iterator start, std::vector<int>::iterator end)
+{
+	
+	// try
+	// {
+
+		std::cout << "add " << std::endl;
+		
+		for (; start != end; start++)
+		{
+			addNumber(*start + 1);
+			std::cout << "add " << *start + 1 << std::endl;
+			// if (arr.size() < len)
+			// {
+				
+			// }
+			// else
+			// 	throw(Span::SpanFull());
+
+		}
+	// }
+	// catch(std::exception &e)
+	// {
+	// 	std::cerr << e.what() << std::endl;
+	// }
 }
