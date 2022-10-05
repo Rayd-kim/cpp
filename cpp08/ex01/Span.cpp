@@ -6,31 +6,32 @@
 /*   By: youskim <youskim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 16:29:46 by youskim           #+#    #+#             */
-/*   Updated: 2022/09/30 15:00:02 by youskim          ###   ########.fr       */
+/*   Updated: 2022/10/05 18:56:40 by youskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
-Span::Span()
+Span::Span() : arr(std::vector<int>(0)), len(0)
 {
-	arr.reserve(0);
-	len = 0;
+	std::cout << "Default Constructor" << std::endl;
 }
 
-Span::Span(unsigned int N)
+Span::Span(unsigned int N) : arr(std::vector<int>(N)), len(N)
 {
-	arr.reserve(N);
-	len = N;
+	arr.resize(0);
+	std::cout << "Constructor" << std::endl;
 }
 
 Span::~Span()
 {
+	std::cout << "Destructor" << std::endl;
 }
 
 Span::Span(const Span &s) : arr(s.arr)
 {
 	len = s.len;
+	std::cout << "Copy Constructor" << std::endl;
 }
 
 Span& Span::operator=(const Span &s)
@@ -106,7 +107,6 @@ void	Span::addNumber(std::vector<int>::iterator start, std::vector<int>::const_i
 		
 		for (; start != end; start++)
 		{
-			// addNumber(*itr + 1);
 			itr = arr.end() - 1;
 			if (arr.size() < len)
 				arr.push_back(*itr + 1);
